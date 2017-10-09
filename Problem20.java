@@ -1,27 +1,25 @@
+//SOLVED
 class Problem20 {
   public static void main(String[] args)
   {
     int result = 0;
-    String facto = "";
+    String facto = factorial(100);
+
+    //computes sum of digits
     for(int i = 0; i < facto.length(); i++)
     {
       result += (Character.getNumericValue(facto.charAt(i)));
     }
 
-    //testing
-    System.out.println(stringXInt("102", 5));
-    System.out.println(stringXInt("2", 1));
-    System.out.println(stringXInt("16743", 20));
-    System.out.println(stringXInt("1456", 11));
-    System.out.println(stringXInt("3245023940293", 21));
-    System.out.println(stringXInt("49328509328405", 45));
+    System.out.println(result);
   }
 
   public static String factorial(int num)
   {
-    String result = "";
-    for(int i = 1; i <= 10; i++)
+    String result = "1";
+    for(int i = 2; i <= num; i++)
     {
+      result = stringXInt(result, i);
     }
     return result;
   }
@@ -33,14 +31,14 @@ class Problem20 {
 
     for(int i = str.length() - 1; i >= 0; i--)
     {
-      int val = Character.getNumericValue(str.charAt(i)) * num;
+      int val = Character.getNumericValue(str.charAt(i));
+      val = val * num;
       val += carry % 10;
       carry = (carry / 10) + (val / 10);
       int onesPlace = val % 10;
-      result = onesPlace + result;
-      i--;
+      result = onesPlace + "" + result;
     }
-    if(carry > 0) {
+    if(carry != 0) {
       result = carry + "" + result;
     }
     return result;
