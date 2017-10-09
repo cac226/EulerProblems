@@ -1,3 +1,4 @@
+//SOLVED
 class Problem19 {
   public static void main(String[] args)
   {
@@ -20,7 +21,7 @@ class Problem19 {
 
     while(year < 2001)
     {
-      if(day % 7 == 1 && month == 10) // if it is a Sunday on the 1st of the month
+      if(day % 7 == 1) // if it is a Sunday on the 1st of the month
       {
         result += 1;
       }
