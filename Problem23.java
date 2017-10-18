@@ -24,30 +24,23 @@ class Problem23
 
   public static void main(String[] args) {
     int result = 0;
-    /*ArrayList<Integer> abundantNums = abundantNumbers(MAXNUMBUER);
+    ArrayList<Integer> abundantNums = abundantNumbers(MAXNUMBUER);
 
     ArrayList<Integer> list = new ArrayList<Integer>();
-    for(int i = 1; i <= MAXNUMBUER; i++)
+    /*for(int i = 1; i <= MAXNUMBUER; i++)
     {
       if(!canBeSumOf(i, abundantNums))
       {
         list.add(i);
       }
-    }
+    }*/
 
     for(int i = 0; i < list.size(); i++)
     {
       result += list.get(i);
     }
 
-    System.out.println(result);*/
-    ArrayList<Integer> set = new ArrayList<Integer>();
-    set.add(1);
-    set.add(2);
-    set.add(3);
-    set.add(7);
-    System.out.println(canBeSumOf(3, set));
-    System.out.println(canBeSumOf(6, set));
+    System.out.println(result);
   }
 
   public static boolean canBeSumOf(int num, ArrayList<Integer> set)
@@ -57,7 +50,7 @@ class Problem23
     int j = 0;
     while(!found && i < set.size() && set.get(i) < num)
     {
-      while(!found && j <= i)
+      while(!found && j <= i && set.get(i) + set.get(j) < num)
       {
         if(set.get(i) + set.get(j) == num)
         {
