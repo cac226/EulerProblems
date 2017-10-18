@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 /*
 Each character on a computer is assigned a unique code and the preferred
 standard is ASCII (American Standard Code for Information Interchange). For
@@ -40,20 +41,29 @@ class Problem59
 
     int[] encrypted = convertToArray(fileText);
 
-    for(int i = 97; i <= 97; i++)
+    int[] encryptedTemp = Arrays.copyOfRange(encrypted, 0, 50);
+
+    int[] key = {103, 111, 100};
+    int[] decrypted = decrypt(encrypted, key);
+
+    System.out.print(sumOfArray(decrypted));
+
+
+    //SOLUTION: i = 103, j = 111, k = 100
+    /*
+    for(int i = 97; i <= 122; i++)
     {
       for(int j = 97; j <= 122; j++)
       {
         for(int k = 97; k <= 122; k++)
         {
-          System.out.print(i + " " + j + " " + k + ": ");
+          System.out.print(i + " " + j + " " + k + ":");
           int[] key = {i, j, k};
-          char[] decrypted = convertToAscii(decrypt(encrypted, key));
+          char[] decrypted = convertToAscii(decrypt(encryptedTemp, key));
           printArray(decrypted);
         }
       }
-    }
-
+    } */
 
   }
 
@@ -134,5 +144,15 @@ class Problem59
       System.out.print(arr[i]);
     }
     System.out.println();
+  }
+
+  public static int sumOfArray(int[] arr)
+  {
+    int result = 0;
+    for(int i = 0; i < arr.length; i++)
+    {
+      result += arr[i];
+    }
+    return result;
   }
 }
