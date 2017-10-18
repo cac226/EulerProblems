@@ -1,5 +1,5 @@
 /*
-IN PROGRESS
+SOLVED ANSWER IS 4179871 (takes about 10 seconds :())
 
 A perfect number is a number for which the sum of its proper divisors is exactly
  equal to the number. For example, the sum of the proper divisors of 28
@@ -27,13 +27,13 @@ class Problem23
     ArrayList<Integer> abundantNums = abundantNumbers(MAXNUMBUER);
 
     ArrayList<Integer> list = new ArrayList<Integer>();
-    /*for(int i = 1; i <= MAXNUMBUER; i++)
+    for(int i = 1; i <= MAXNUMBUER; i++)
     {
       if(!canBeSumOf(i, abundantNums))
       {
         list.add(i);
       }
-    }*/
+    }
 
     for(int i = 0; i < list.size(); i++)
     {
